@@ -1,20 +1,18 @@
 import React from 'react'
 import Quizzes from './Quizzes'
 
-const QuizPage = ({quizes}) => {
-    console.log(quizes)
-
-    // function generateQuizElements(){
-    //     const quizArray = []
-    //     for(let i = 0; i < 4; i++){
-    //         quizArray.push(<Quizzes question={}/>quizes[i].question)
-    //     }
-    // }
+const QuizPage = ({quizzes}) => {
+  
+ const quizElements = quizzes.map(quiz => <Quizzes
+ key={quiz.id}
+  question={quiz.question}
+  correctAnswer={quiz.correctAnswer}
+  incorrectAnswers={quiz.incorrectAnswers} />)
     
-
   return (
     <div className='quiz-page'>
-        <Quizzes question={quizes.question} />
+        
+        {quizElements}
         <button>Get Answers</button>
     </div>
   )

@@ -1,13 +1,14 @@
 import React from 'react'
+import { nanoid } from 'nanoid'
 
-const Answers = () => {
+const Answers = ({correctAnswer, incorrectAnswers}) => {
+  const correctAnswerArray = [correctAnswer]
+  const buttonArray = incorrectAnswers.concat(correctAnswerArray)
+const buttonElements =  buttonArray.map(answer => <button key={nanoid()}>{answer}</button>)
   return (
     <div className="answer-container">
-        <button className="answers">Hola</button>
-        <button className="answers">Adios</button>
-        <button className="answers">Au Revoir</button>
-        <button className="answers">Salir</button>
-
+      {buttonElements
+}
         </div>
   )
 }
