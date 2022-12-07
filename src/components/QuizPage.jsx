@@ -1,7 +1,7 @@
 import React from 'react'
 import Quizzes from './Quizzes'
 
-const QuizPage = ({quizzes, selectButton, checkAnswers}) => {
+const QuizPage = ({quizzes, selectButton, checkAnswers, resultsShown, newGame}) => {
   
  const quizElements = quizzes.map(quiz => <Quizzes
  key={quiz.id}
@@ -16,9 +16,19 @@ const QuizPage = ({quizzes, selectButton, checkAnswers}) => {
     <div className='quiz-page'>
         
         {quizElements}
-        <button 
-        onClick={checkAnswers}
-        className='get-answers-button'>Check Answers</button>
+        <div className='btn-and-results-container'>
+
+        {resultsShown && <p>You scored 3/5 correct answers</p>}
+        {
+          resultsShown ?
+          <button 
+          onClick={newGame}
+          className='get-answers-button'>Play Again</button>
+          :
+          <button 
+          onClick={checkAnswers}
+          className='get-answers-button'>Check Answers</button>}
+          </div>
     </div>
   )
 }
