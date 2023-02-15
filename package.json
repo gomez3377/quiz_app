@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "components": "^0.1.0",
     "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanitize-html": "^2.7.3"
+    "sanitize-html": "^2.7.3",
+    "sass": "^1.58.1",
+    "styled": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
